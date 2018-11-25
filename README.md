@@ -25,21 +25,26 @@ class TestSearchingElement(TestCase):
 ------
 ##  Task 2, Books
 #### Approach
-Starting with a shelf of **N** books numbered from 1 
-to N and assuming we only have one copy of a book ,the approach is that the slot 0 in the array needs to contain the first book and so on 
-so the sorting method loops the array and checks if 
-the existing book correspondence to the slot number
-or not , in the later case it will finds the index of  the needed value and swaps it with the current value
-- for example:
+Starting with a shelf of **N** books numbered from 1 to N and assuming we only have one copy of
+a book ,the approach is that the slot 0 in the array should contain the first book and so the 
+sorting method loops the array and checks 
+- if the existing book **x** does not correspond to the slot **_i_**
+- it finds the position **pos** of the book that supposedly belongs tp the slot **_i_** 
+- then it swaps the book in the slot **pos** with the slot current slot **_i_**
+    - for example:
+    we start with the following array 
+    
+        `
+        array: 3 1 5 4 2
+        `
 
-`
-in: 3 1 5 4 2
-`
-
-we see here that the first slot should contain book  nb 1 so the algorithm locates the position of boob nb 1 and swaps its content with the first slot and so the first iteration results 
- `
-in: 1 3 5 4 2
-`
+        - we see here that the `array[0]` contains the book *3* 
+        - so the algorithm locates the index of book *1* in the array which returns the value 1
+        - the algorithm makes the swap and so the first iteration results 
+        
+         `
+        array: 1 3 5 4 2
+        `
 #### Code 
 ```
 books.py
